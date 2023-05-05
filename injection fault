@@ -1,0 +1,41 @@
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class AverageTest {
+
+    @Test
+    public void testValidInput() {
+        int[] list = {2, 4, 6, 8, 10};
+        assertEquals(5, Average.average(5, list));
+    }
+
+    @Test
+    public void testKGreaterThanListLength() {
+        int[] list = {1, 3, 5};
+        assertEquals(3, Average.average(5, list));
+    }
+
+    @Test
+    public void testEmptyList() {
+        int[] list = {};
+        assertEquals(0, Average.average(3, list));
+    }
+
+    @Test
+    public void testKLessThanOne() {
+        int[] list = {1, 3, 5};
+        assertEquals(0, Average.average(0, list));
+    }
+
+    @Test
+    public void testAllElementsEqual() {
+        int[] list = {2, 2, 2, 2, 2};
+        assertEquals(2, Average.average(5, list));
+    }
+
+    @Test
+    public void testInvalidInput() {
+        int[] list = {1, 3, 5};
+        assertEquals(2, Average.average(0, list));
+    }
+}
